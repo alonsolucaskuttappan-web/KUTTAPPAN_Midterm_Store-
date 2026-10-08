@@ -194,4 +194,4 @@
 /workspaces/KUTTAPPAN_Midterm_Store-/obj/Debug/net10.0/KUTTAPPAN_Midterm_Store-.pdb
 /workspaces/KUTTAPPAN_Midterm_Store-/obj/Debug/net10.0/KUTTAPPAN_Midterm_Store-.genruntimeconfig.cache
 /workspaces/KUTTAPPAN_Midterm_Store-/obj/Debug/net10.0/ref/KUTTAPPAN_Midterm_Store-.dll
-/workspaces/KUTTAPPAN_Midterm_Store-/obj/Debug/net10.0/compressed/gl4v3hbieq-{0}-rirrjggdps-rirrjggdps.gz
+/workspaces/KUTTAPPAN_Midterm_Store-/obj/Debug/net10.0/compressed/gl4v3hbieq-{0}-h6kpfgzed5-h6kpfgzed5.gz

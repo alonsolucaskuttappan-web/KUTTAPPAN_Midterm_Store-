@@ -9,38 +9,28 @@
     <a asp-action="Create" class="btn btn-primary">Add New Product</a>
 </div>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Category</th>
-            <th>Price</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>@item.Name</td>
-                <td>@item.Description</td>
-                <td>@item.Category</td>
-                <td>@item.Price.ToString("0.00")</td>
-                <td class="d-flex gap-1">
-                    <form asp-controller="Cart" asp-action="Add" method="post">
-                        <input type="hidden" name="productId" value="@item.Id" />
-                        <button type="submit" class="btn btn-success btn-sm">Add to Cart</button>
+<div class="row">
+    @foreach (var product in Model)
+    {
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">@product.Name</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">@product.Category</h6>
+                    <p class="card-text">@product.Description</p>
+                    <p class="card-text"><strong>$@product.Price.ToString("F2")</strong></p>
+                </div>
+                <div class="card-footer bg-white">
+                   <form asp-controller="Cart" asp-action="Add" asp-route-productId="@product.Id" method="post" class="d-inline">
+    <button type="submit" class="btn btn-sm btn-success">Add to Cart</button>
+</form>
+                    <a asp-action="Edit" asp-route-id="@product.Id" class="btn btn-sm btn-warning">Edit</a>
+                    <form asp-action="Delete" asp-route-id="@product.Id" method="post" class="d-inline"
+                          onsubmit="return confirm('Delete this product?');">
+                        <button type="submit" class="btn btn-sm btn-danger">Delete</button>
                     </form>
-
-                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning btn-sm">Edit</a>
-
-                    <form asp-action="Delete" method="post" onsubmit="return confirm('Delete this product?');">
-                        <input type="hidden" name="id" value="@item.Id" />
-                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-                    </form>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+                </div>
+            </div>
+        </div>
+    }
+</div>

@@ -3,8 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using KUTTAPPAN_Midterm_Store.Data;
 using KUTTAPPAN_Midterm_Store.Models;
 
-namespace KUTTAPPAN_Midterm_Store.Controllers
-{
+
     public class CartController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -78,4 +77,3 @@ namespace KUTTAPPAN_Midterm_Store.Controllers
             return RedirectToAction("Index");
         }
     }
-}

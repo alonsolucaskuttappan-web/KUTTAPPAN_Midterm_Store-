@@ -3,30 +3,26 @@ using Microsoft.EntityFrameworkCore;
 using KUTTAPPAN_Midterm_Store.Data;
 using KUTTAPPAN_Midterm_Store.Models;
 
-namespace KUTTAPPAN_Midterm_Store.Controllers
-{
-    public class ProductsController : Controller
+public class ProductsController : Controller
     {
-        private readonly ApplicationDbContext _context;
+private readonly ApplicationDbContext _context;
 
-        public ProductsController(ApplicationDbContext context)
+ public ProductsController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // READ - list all products
-        public async Task<IActionResult> Index()
+        
+      public async Task<IActionResult> Index()
         {
-            return View(await _context.Products.ToListAsync());
+         return View(await _context.Products.ToListAsync());
         }
 
-        // CREATE - show form
-        public IActionResult Create()
+     public IActionResult Create()
         {
             return View();
         }
 
-        // CREATE - save product
         [HttpPost]
         public async Task<IActionResult> Create(Product product)
         {
@@ -39,7 +35,7 @@ namespace KUTTAPPAN_Midterm_Store.Controllers
             return View(product);
         }
 
-        // UPDATE - show form
+      
         public async Task<IActionResult> Edit(int id)
         {
             var product = await _context.Products.FindAsync(id);
@@ -47,7 +43,7 @@ namespace KUTTAPPAN_Midterm_Store.Controllers
             return View(product);
         }
 
-        // UPDATE - save changes
+      
         [HttpPost]
         public async Task<IActionResult> Edit(Product product)
         {
@@ -60,7 +56,7 @@ namespace KUTTAPPAN_Midterm_Store.Controllers
             return View(product);
         }
 
-        // DELETE
+     
         [HttpPost]
         public async Task<IActionResult> Delete(int id)
         {
@@ -73,4 +69,3 @@ namespace KUTTAPPAN_Midterm_Store.Controllers
             return RedirectToAction("Index");
         }
     }
-}

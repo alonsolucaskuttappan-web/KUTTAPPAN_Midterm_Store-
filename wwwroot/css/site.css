@@ -36,20 +36,18 @@ body {
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
   text-align: start;
 }
-
-.table {
-  --bs-table-bg: white;
-  --bs-table-striped-bg: #DEEBF7;
-  --bs-table-hover-bg: #C6DBEF;
-  border: 1px solid #08306B;
+.card {
+  border : 1px solid #08306B;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
 }
+.card body {
+  padding: 1rem;
+}   
 
-.table thead th {
+.card footer {
   background-color: #08306B;
   color: white;
-  border-color: #08306B;
-}
-
-.table td {
-  vertical-align: middle;
+  padding: 0.75rem 1.25rem;
+  border-top: 1px solid #08306B;
 }
